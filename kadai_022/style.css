@@ -1,0 +1,100 @@
+/* すべての要素のデフォルト余白をリセット */
+body, h1, p {
+  margin: 0;
+}
+
+/* 記事内すべての p と a 要素のフォントサイズを指定 */
+p, a {
+  font-size: 20px;
+}
+
+/* Step4: header部分のスタイル */
+header {
+  margin-bottom: 20px;                /* 下の余白 */
+  background-color: rgb(244, 79, 79); /* 背景色 */
+  text-align: center;                 /* 中央揃え */
+}
+
+header h1 {
+  color: rgb(255, 255, 255);          /* 文字色 */
+}
+
+/* Step5: main部分のスタイル */
+main {
+  padding: 10px;                      /* main全体の余白 */
+}
+
+#parent {
+  display: flex;                      /* Flexコンテナ */
+  justify-content: space-around;      /* 均等に配置 */
+}
+
+.contents {
+  border: 3px solid rgb(238, 204, 204);  /* 枠線 */
+  flex-basis: 25%;                       /* 親幅の25% */
+  padding: 10px 15px;                    /* 内側余白 */
+  margin: 20px 0;                        /* 外側余白 */
+  text-align: center;                    /* 中央揃え */
+}
+
+.contents h2 {
+  font-size: 25px;                       /* フォントサイズ */
+  border-bottom: 3px dotted rgb(236, 122, 122); /* 下線 */
+}
+
+.contents h2::before {
+  content: "●";                          /* 記号 */
+  color: rgb(239, 111, 139);             /* 記号色 */
+  margin-right: 5px;
+}
+
+/* .contents内の2番目のp要素の最初の文字 */
+.contents p:nth-of-type(2)::first-letter {
+  font-weight: bold;                     /* 太字 */
+  color: rgb(97, 206, 249);              /* 文字色 */
+}
+
+.contents img {
+  margin: 10px 0;                        /* 上下余白 */
+  width: 70%;                            /* 幅70% */
+}
+
+/* Step6: footer部分のスタイル */
+footer {
+  background-color: rgb(244, 79, 79);    /* 背景色 */
+  text-align: center;                    /* 中央揃え */
+  padding: 10px;                         /* 余白 */
+}
+
+footer a {
+  color: rgb(255, 255, 255);             /* リンク文字色 */
+  text-decoration: none;                 /* 下線を消したい場合 */
+}
+
+footer a:visited {
+  color: rgb(193, 234, 251);             /* 訪問済みリンク色 */
+}
+
+footer a:hover {
+  color: rgb(245, 178, 168);             /* ホバー時の色 */
+}
+
+/* Step7: レスポンシブ対応のスタイル */
+@media screen and (max-width: 768px) {
+  .contents h2 {
+    font-size: 30px;   /* h2のフォントサイズ */
+  }
+
+  p {
+    font-size: 25px;   /* pのフォントサイズ */
+  }
+
+  #parent {
+    flex-direction: column;  /* Flexアイテムを縦並びに */
+    align-items: center;     /* 中央揃え */
+  }
+
+  .contents {
+    flex-basis: 80%;   /* 幅を広げて見やすく */
+  }
+}
