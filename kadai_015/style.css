@@ -37,7 +37,7 @@ h1 .pink {
 }
 
 /* #basic 内の特定要素を太字 */
-#basic p strong {
+#basic p {
   font-weight: bold;
 }
 
